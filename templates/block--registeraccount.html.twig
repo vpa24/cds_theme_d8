@@ -1,0 +1,28 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'blue-border-top',
+    'custom-block-user-login',
+    'mr-2',
+    'col'
+  ]
+%}
+{%
+    set title = [
+        'mb-4'
+    ]
+%}
+<div{{attributes.addClass(classes)}}>
+	{{ title_prefix }}
+	{% if label %}
+		<h1{{title_attributes.addClass(title)}}>{{ label }}</h1>
+	{% endif %}
+	{{ title_suffix }}
+	{% block content %}
+		<div{{content_attributes.addClass('content')}}>
+			{{ content }}
+		</div>
+	{% endblock %}
+</div>

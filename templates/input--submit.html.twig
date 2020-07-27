@@ -1,0 +1,8 @@
+{%
+    set submit = [
+        'btn',
+        'btn-sm',
+        'btn-primary'
+    ]
+%}
+<input{{attributes.addClass(submit).removeClass('button')}}/>{{ children }}

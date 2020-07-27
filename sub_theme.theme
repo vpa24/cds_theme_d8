@@ -1,0 +1,37 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\UserInterface;
+use Drupal\Core\Url;
+
+function sub_theme_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+
+    // Adding custom validation for the welcome page type field.
+    if ($form_id == 'user_login_form') {
+        $form['name']['#title'] = '';
+        $form['name']['#attributes']['placeholder'] = t('Username');
+        $form['pass']['#attributes']['placeholder'] = t('Password');
+        $items = [];
+        if (\Drupal::config('user.settings')->get('register') != UserInterface::REGISTER_ADMINISTRATORS_ONLY) {
+            $items['create_account'] = [
+                '#type' => 'link',
+                '#title' => "hello",
+                '#url' => Url::fromRoute('user.register', [], [
+                    'attributes' => [
+                        'title' => 'hello',
+                        'class' => ['create-account-link'],
+                    ],
+                ]),
+            ];
+        }
+    }
+}
+function sub_theme_preprocess_html(&$variables)
+{
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+}
+function sub_theme_preprocess_block__user_login_block(&$variables)
+{
+    $variables['content']['user_links']['#access'] = FALSE;
+}
