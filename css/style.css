@@ -14,9 +14,9 @@
 #block-userlogin,
 #block-registeraccount,
 #block-authorizedpartner {
-  width: 30%;
   background-color: #f1f1f1;
   padding: 19px 30px;
+  margin-bottom: 15px;
 }
 #block-userlogin h1 {
   font-weight: 600;
@@ -34,9 +34,6 @@
 h1 {
   font-size: 34px;
 }
-#block-registeraccount {
-  width: 33%;
-}
 
 .login-hr {
   border-color: #97999b;
@@ -50,14 +47,11 @@ h3 {
   border-color: #801515;
   border-bottom-color: rgb(128, 21, 21);
 }
-#block-authorizedpartner {
-  width: 35%;
-}
 #block-authorizedpartner h3 {
   font-weight: 600;
 }
 .partner-front-page .logo-front {
-  flex: 2;
+  flex: 7;
 }
 .verticle-line {
   width: 1px;
@@ -102,4 +96,46 @@ h3 {
 }
 .site-footer__top .content li a {
   border-bottom: none !important;
+}
+h5 {
+  letter-spacing: 0 !important;
+}
+.menu-item.social {
+  display: inline-block;
+}
+ul.social-media li a i {
+  background: #205d7a;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  font-size: 18px;
+  text-align: center;
+  margin-right: 10px;
+  padding-top: 8px;
+  text-indent: 0;
+}
+ul.social-media li a i.fa-facebook-f {
+  background: #3b5998;
+}
+ul.social-media li a i.fa-twitter {
+  background: #0177b5;
+}
+li a i.fa-linkedin-in {
+  background: #45b0e3 !important;
+}
+li a i.fa-youtube {
+  background: #d32323 !important;
+}
+#block-copyright p {
+  font-size: 13px;
+  color: #f5f6f7 !important;
+  text-align: center;
+}
+.site-footer__bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  letter-spacing: 0px !important;
+}
+.site-footer__top .content li a {
+  padding: 0.8em 2px 0.1em 20px !important;
 }

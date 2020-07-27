@@ -1,0 +1,41 @@
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/1.x/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+{% 
+set ul_class = [
+    'menu',
+    'social-media',
+    'inline-block'
+]
+%}
+{% macro menu_links(items, attributes, menu_level) %}
+	{% import _self as menus %}
+	{% if items %}
+		<ul class="menu social-media">
+			{% for item in items %}
+				{%
+        set classes = [
+          'menu-item',
+          'social',
+          item.title
+        ]
+      %}
+				<li{{item.attributes.addClass(classes)}}>
+					{% if item.title == 'linkedin' %}
+						{% set title = item.title|replace({'linkedin': '<i class="fab fa-linkedin-in"></i>'}) %}
+					{% elseif item.title == 'instagram' %}
+						{% set title = item.title|replace({'instagram': '<i class="fab fa-instagram"></i>'}) %}
+					{% elseif item.title == 'youtube' %}
+						{% set title = item.title|replace({'youtube': '<i class="fab fa-youtube"></i>'}) %}
+					{% endif %}
+					{% set link_text %}{{ title|raw }}{% endset %}
+					{{ link(link_text, item.url) }}
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endmacro %}

@@ -4,4 +4,4 @@ global-styling:
     base:
       css/bootstrap.css: {}
       css/style.css: {}
-  # js:
+      css/all.min.css: {}

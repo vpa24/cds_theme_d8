@@ -4,6 +4,8 @@
     'block-menu',
     'navigation',
     'menu--' ~ derivative_plugin_id|clean_class,
+	'col-6',
+	'col-md-3',
   ]
 %}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
@@ -24,15 +26,9 @@
 	{% block content %}
 		<div{{content_attributes.addClass('content')}}>
 			{# When rendering a menu without label, render a menu toggle. #}
-			<div class="menu-toggle-target menu-toggle-target-show" id="{{ show_anchor }}"></div>
-			<div class="menu-toggle-target" id="{{ hide_anchor }}"></div>
-			<a class="menu-toggle" href="#{{ show_anchor }}">{% trans %}
-				Show &mdash;
-				{{ configuration.label }}{% endtrans %}</a>
-			<a class="menu-toggle menu-toggle--hide" href="#{{ hide_anchor }}">{% trans %}
-				Hide &mdash;
-				{{ configuration.label }}{% endtrans %}</a>
 			{{ content }}
 		</div>
 	{% endblock %}
+	{{ drupal_entity('block','menu_social_media', check_access=false) }}
+	{{ drupal_entity('block','menu_social_media_2', check_access=false) }}
 </nav>
