@@ -31,26 +31,19 @@
 							{{ page.content }}
 						</section>
 					</main>
+					{% if page.sidebar_first %}
+						<div id="sidebar-first" class="column sidebar">
+							<aside class="section" role="complementary">
+								{{ page.sidebar_first }}
+							</aside>
+						</div>
+					{% endif %}
 				{% else %}
-					<main id="content" class="column main-content row" role="main">
+					<main id="content" class="column row" role="main">
 						{{ drupal_entity('block','userlogin', check_access=false) }}
 						{{ drupal_entity('block','registeraccount', check_access=false) }}
 						{{ drupal_entity('block','authorizedpartner', check_access=false) }}
 					</main>
-				{% endif %}
-				{% if page.sidebar_first %}
-					<div id="sidebar-first" class="column sidebar">
-						<aside class="section" role="complementary">
-							{{ page.sidebar_first }}
-						</aside>
-					</div>
-				{% endif %}
-				{% if page.sidebar_second %}
-					<div id="sidebar-second" class="column sidebar">
-						<aside class="section" role="complementary">
-							{{ page.sidebar_second }}
-						</aside>
-					</div>
 				{% endif %}
 			</div>
 		</div>
