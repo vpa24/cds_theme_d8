@@ -198,8 +198,35 @@ a:focus {
 .site-footer__top .content li a {
   padding: 0 2px 0.1em 20px !important;
 }
-ul,
-ol {
-  margin-top: 0;
-  margin-bottom: 13px !important;
+@media (min-width: 851px) {
+  .layout-container {
+    max-width: 1200px !important;
+  }
+}
+@media (min-width: 768px) {
+  #block-userlogin {
+    max-width: 31% !important;
+  }
+}
+.region-header {
+  padding: 0 !important;
+  padding: 3px 40px !important;
+  background-color: #fff;
+}
+#header {
+  background: none !important;
+}
+.site-branding__logo img {
+  height: 65px !important;
+}
+
+.region-header a {
+  color: #333 !important;
+}
+.region-header .block-menu {
+  width: auto !important;
+}
+.region-header .block-menu li a {
+  font-size: 16px;
+  padding: 12px 7px !important;
 }
