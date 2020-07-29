@@ -35,3 +35,7 @@ function sub_theme_preprocess_block__user_login_block(&$variables)
 {
     $variables['content']['user_links']['#access'] = FALSE;
 }
+function sub_theme_preprocess(&$variables, $hook, $info)
+{
+    $variables['current_user_name'] = $variables['user']->getDisplayName();
+}

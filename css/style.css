@@ -230,3 +230,25 @@ a:focus {
   font-size: 16px;
   padding: 12px 7px !important;
 }
+#block-sub-theme-main-menu {
+  background-color: #002248;
+  border-color: #000a15;
+}
+.region-primary-menu .menu a {
+  background: none !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+  border: none !important;
+  text-shadow: none !important;
+  font-weight: bold;
+}
+.main-menu-div {
+  display: flex;
+  justify-content: center;
+}
+.welcome-name {
+  position: absolute;
+  bottom: 13px;
+  right: 80px;
+  color: #fff !important;
+}
