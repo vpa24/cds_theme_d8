@@ -6,6 +6,4 @@ global-styling:
       css/style.css: {}
       css/all.min.css: {}
   js:
-    js/jquery-3.5.1.slim.min.js: {}
-    js/popper.min.js: {}
     js/bootstrap.min.js: {}

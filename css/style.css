@@ -210,7 +210,6 @@ a:focus {
 }
 .region-header {
   padding: 0 !important;
-  padding: 3px 40px !important;
   background-color: #fff;
 }
 #header {
@@ -251,4 +250,29 @@ a:focus {
   bottom: 13px;
   right: 80px;
   color: #fff !important;
+}
+.social-media {
+  margin-top: 10px !important;
+}
+.feed-icons {
+  display: none;
+}
+@media (min-width: 901px) {
+  .region-header .block:not(.site-branding) {
+    margin: 0px !important;
+  }
+}
+.region-header .site-branding {
+  padding: 10px 20px;
+}
+.region-header .block ul {
+  margin: 20px;
+}
+a:hover,
+a:active,
+a:focus,
+.link:hover,
+.link:active,
+.link:focus {
+  border-bottom: none !important;
 }
